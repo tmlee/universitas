@@ -216,7 +216,15 @@ en:
     groups: Groups
     blank:
       users: This document is not collected by any users
-      groups: This document is not shared to any groups 
+      groups: This document is not shared to any groups
+    form_validations:
+      name:
+        required: Please fill out this field
+        minlength: Document name has to be at least 4 characters long
+      file:
+        required: Please select a file
+      description: 
+        maxlength: Document description cannot exceed 1000 characters long
   modules:
     singular: Module
     plural: Modules

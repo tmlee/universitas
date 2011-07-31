@@ -1,5 +1,4 @@
 $(function(){
-	
 	/******* General Code *******/
 	
 	$('.updates').endlessScroll({
@@ -83,6 +82,9 @@ $(function(){
 				required: true,
 				minlength: 4
 			},
+			"group_document[document_attributes][description]":{
+				maxlength: 1000
+			},
 			"group_document[document_attributes][file]":{
 				required: true
 			}
@@ -90,13 +92,18 @@ $(function(){
 		},
 		messages:{
 			"group_document[document_attributes][name]":{
-				required: "Please fill out this field",
-				minlength: "Document name has to be at least 4 characters long"
+				required: I18n.t('documents.form_validations.name.required'),
+				minlength: I18n.t('documents.form_validations.name.minlength')
 			},
+			"group_document[document_attributes][description]":{
+				maxlength: I18n.t('documents.form_validations.description.maxlength')
+			},
+			//I18n.t('shared.app_description')
 			"group_document[document_attributes][file]":{
-				required: "Please select a file"
+				required: I18n.t('documents.form_validations.file.required')
 			}
 		}
+		
 			
 	});
 	
