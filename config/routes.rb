@@ -51,7 +51,7 @@ Universitas::Application.routes.draw do
 
 	resources :documents, :only => [:index, :show] do
 		member do
-			get :download
+			post :download_plus_one
 		end
 	end
 	

@@ -14,8 +14,10 @@ class DocumentsController < InheritedResources::Base
 	  super
   end
 	
-	def download
+	def download_plus_one
+	  # Download file
 	  resource.download_plus_one
+	  render :nothing => true
 	end
 	
 	private
