@@ -36,6 +36,20 @@ $(function(){
 		showUpdatesFor($(ui.tab).attr('target'));
 	});
 	
+	/******* Document download send request to update download count *******/
+	var assync_download_plus_one = function(){
+		var link_tag = $(this);
+		var document_id = (link_tag.attr('id').substr('document_download_'.length));
+		$.post('/documents/' + document_id + '/download_plus_one.js');
+		link_tag.unbind('click');
+		setTimeout(function(){
+			link_tag.bind('click', assync_download_plus_one);
+		}, 3000);
+		
+	}
+	$(".document-download").click(assync_download_plus_one);
+	
+	
 	/******* Group document sharing UI *******/
 	
 	$("#search-docs .doc .options a").live('click', function(event){
